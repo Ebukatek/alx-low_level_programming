@@ -1,20 +1,22 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
- * malloc_checked - normal process termination
+ * malloc_checked - allocates memory using malloc
  *
- * @b: allocated memory
+ * @b: size of allocated memory
  *
  * Return: a pointer to the new memory allocated
  */
 
 void *malloc_checked(unsigned int b)
 {
-	void *a;
+	void *mem = malloc(b);
 
-	a =  malloc(b);
-	if (a == NULL)
+	if (mem == NULL)
+	{
 		exit(98);
-	return (a);
+	}
+
+	return (mem);
 }
